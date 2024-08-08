@@ -1,3 +1,3 @@
-# [Event Planner](https://frontend-event-planner.vercel.app/categories/66b480c9874fa3147d1b5c9b)
+# [Event Planner](https://frontend-event-planner.vercel.app/)
 
 Book Your Tickets Now!!!
