@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Link } from "react-router-dom";
+import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
 
 import img1 from "../../assets/images_folder/movie1.avif";
 import img2 from "../../assets/images_folder/movie2.avif";
@@ -28,7 +22,8 @@ const movies = [
     name: "AURON MEIN KAHA DUM THA",
     rating: "7.8",
     image: img2,
-    description: "Dushman the hum hi apne, auron mein kahan dum tha. Bound by fate. Defined by love!",
+    description:
+      "Dushman the hum hi apne, auron mein kahan dum tha. Bound by fate. Defined by love!",
   },
   {
     id: 3,
@@ -73,11 +68,15 @@ const RecommendedMovies = () => {
         {movies.map((movie) => (
           <Card
             key={movie.id}
+            component={Link}
+            to={`/categories/66b480f0874fa3147d1b5c9e`}
             sx={{
               maxWidth: 300,
               minWidth: 250,
               borderRadius: 2,
               flexShrink: 0,
+              textDecoration: "none",
+              color: "inherit",
             }}
           >
             <CardMedia

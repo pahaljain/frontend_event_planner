@@ -40,6 +40,8 @@ const Categories = () => {
         const response = await axios.get(
           "https://backend-event-planner-wecj.onrender.com/api/categories"
         );
+        console.log(response);
+
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);

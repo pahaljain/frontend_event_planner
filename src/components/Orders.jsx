@@ -10,16 +10,16 @@ import {
   CardMedia,
 } from "@mui/material";
 
-import img4 from "../assets/images_folder/comedy1.avif";
+import img1 from "../assets/images_folder/comedy1.avif";
 import img2 from "../assets/images_folder/music1.avif";
-import img1 from "../assets/images_folder/comedy2.avif";
+import img3 from "../assets/images_folder/movie6.avif";
+import img4 from "../assets/images_folder/comedy2.avif";
 import img5 from "../assets/images_folder/movie1.avif";
-import img3 from "../assets/images_folder/comedy3.avif";
-import img7 from "../assets/images_folder/category_image_7.avif";
-import img8 from "../assets/images_folder/category_image_8.avif";
+import img7 from "../assets/images_folder/movie2.avif";
+import img8 from "../assets/images_folder/movie3.avif";
 
 // Array of images for orders
-const orderImages = [img1, img2, img3, img4, img5];
+const orderImages = [img1, img2, img3, img4, img5, img7, img8];
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
