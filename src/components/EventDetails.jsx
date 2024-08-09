@@ -10,6 +10,8 @@ import {
   Box,
   Alert,
 } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EventDetails = () => {
   const { eventId } = useParams();
@@ -51,7 +53,7 @@ const EventDetails = () => {
 
   const handlePurchase = async () => {
     if (tickets > event.no_of_tickets) {
-      alert("Not enough tickets available");
+      toast.error("Not enough tickets available");
       return;
     }
 
@@ -76,13 +78,13 @@ const EventDetails = () => {
         }
       );
 
-      alert("Tickets purchased successfully");
+      toast.success("Tickets purchased successfully!");
       setEvent(response.data);
       setTickets(1);
       setTotalPrice(response.data.price_per_ticket);
     } catch (error) {
       console.error("Error purchasing tickets:", error);
-      alert("Error purchasing tickets");
+      toast.error("Error purchasing tickets");
     }
   };
 
@@ -92,6 +94,7 @@ const EventDetails = () => {
 
   return (
     <Container sx={{ mt: 4 }}>
+      <ToastContainer />
       <Typography variant="h4" gutterBottom>
         {event.name_of_event}
       </Typography>

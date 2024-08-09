@@ -19,7 +19,7 @@ import img4 from "../assets/images_folder/movie1.avif";
 import img5 from "../assets/images_folder/movie5.avif";
 import img6 from "../assets/images_folder/movie6.avif";
 import img7 from "../assets/images_folder/movie4.avif";
-import img8 from "../assets/images_folder/movie5.avif";
+import img8 from "../assets/images_folder/movie2.avif";
 
 // Array of event images
 const eventImages = [img1, img2, img3, img4, img5, img6, img7, img8];
@@ -53,38 +53,44 @@ const Events = () => {
       <Typography variant="h4" gutterBottom>
         Events
       </Typography>
-      <Grid container spacing={2}>
-        {events.map((event, index) => (
-          <Grid item key={event._id} xs={12} sm={6} md={4}>
-            <Card sx={{ minHeight: 400, maxWidth: 280, borderRadius: 2 }}>
-              <CardMedia
-                component="img"
-                height="400"
-                image={eventImages[index % eventImages.length]}
-                alt={event.name_of_event}
-                sx={{ borderTopLeftRadius: 8, borderTopRightRadius: 8 }}
-              />
-              <CardContent>
-                <Typography variant="h6" component="div">
-                  {event.name_of_event}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" noWrap>
-                  {event.description_of_event}
-                </Typography>
-                <Button
-                  component={Link}
-                  to={`/events/${event._id}`}
-                  variant="contained"
-                  color="primary"
-                  sx={{ mt: 2 }}
-                >
-                  View Details
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      {events.length > 0 ? (
+        <Grid container spacing={2}>
+          {events.map((event, index) => (
+            <Grid item key={event._id} xs={12} sm={6} md={4}>
+              <Card sx={{ minHeight: 400, maxWidth: 280, borderRadius: 2 }}>
+                <CardMedia
+                  component="img"
+                  height="400"
+                  image={eventImages[index % eventImages.length]}
+                  alt={event.name_of_event}
+                  sx={{ borderTopLeftRadius: 8, borderTopRightRadius: 8 }}
+                />
+                <CardContent>
+                  <Typography variant="h6" component="div">
+                    {event.name_of_event}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" noWrap>
+                    {event.description_of_event}
+                  </Typography>
+                  <Button
+                    component={Link}
+                    to={`/events/${event._id}`}
+                    variant="contained"
+                    color="primary"
+                    sx={{ mt: 2 }}
+                  >
+                    View Details
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      ) : (
+        <Typography variant="h6" color="text.secondary" sx={{ mt: 2 }}>
+          No Events in this category yet.
+        </Typography>
+      )}
     </Container>
   );
 };
